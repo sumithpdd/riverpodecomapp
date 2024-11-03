@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "919223704995",
+    "firebase_url": "https://codelabs-9842c.firebaseio.com",
+    "project_id": "codelabs-9842c",
+    "storage_bucket": "codelabs-9842c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919223704995:android:c846b24a793b4cbe1d4e16",
+        "android_client_info": {
+          "package_name": "com.example.riverpod_ecom_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "919223704995-2luhsrb3ovs9om0eirqqvvi3v0jrdf0o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHg6iRpEM7YvS7XW8Rpz2crn5raK1GfWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "919223704995-2luhsrb3ovs9om0eirqqvvi3v0jrdf0o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

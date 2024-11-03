@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_ecom_app/products/screens/cart_screen.dart';
+import 'package:riverpod_ecom_app/extensions/build_context_extensions.dart';
 
-import 'models/products.dart';
-import 'providers/products_future_provider.dart';
+import '../../auth/provider/auth_provider.dart';
+import '../models/products.dart';
+import 'products_detail_screen.dart';
+import '../providers/products_future_provider.dart';
 
 class AllProductsScreens extends ConsumerWidget {
   const AllProductsScreens({super.key});
@@ -17,6 +21,18 @@ class AllProductsScreens extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('All Products'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                ref.read(authProvider.notifier).signOut();
+              },
+              icon: const Icon(Icons.logout)),
+          IconButton(
+              onPressed: () {
+                context.goTo(const CartScreen());
+              },
+              icon: const Icon(Icons.shopping_cart))
+        ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,6 +85,11 @@ class AllProductsScreens extends ConsumerWidget {
                   itemCount: data.length,
                   itemBuilder: (context, index) {
                     return ListTile(
+                      onTap: () {
+                        context.goTo(ProductsDetailScreen(
+                          product: data[index],
+                        ));
+                      },
                       leading: Image.network(data[index].thumbnail.toString()),
                       title: Text(data[index].title!),
                       subtitle: Text(data[index].description!),
